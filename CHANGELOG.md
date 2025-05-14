@@ -1,3 +1,7 @@
+## [0.2.0]
+
+Added easing functions as parameters to the `Animate` method.
+
 ## [0.1.2]
 
 Include XML docs in imported package.

@@ -13,13 +13,15 @@ public static partial class Utils
     /// </summary>
     /// <param name="duration">Duration of the animation in seconds.</param>
     /// <param name="action">An action that takes the parameter "timer", a float going from 0 to 1.</param>
+    /// <param name="easing">An optional easing function that takes a float and returns a float. Default is linear.</param>
     /// <param name="actionAtTheEnd">An optional action executed after the timer has reached 1.</param>
-    public static IEnumerator Animate(float duration, System.Action<float> action, System.Action actionAtTheEnd = null)
+    public static IEnumerator Animate(float duration, System.Action<float> action, System.Func<float, float> easing = null, System.Action actionAtTheEnd = null)
     {
+        easing ??= (x => x);
         float timer = 0;
         while (timer < duration)
         {
-            action(timer / duration);
+            action(easing(timer / duration));
             timer += Time.deltaTime;
             yield return null;
         }
