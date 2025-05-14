@@ -1,0 +1,15 @@
+{
+  "name": "com.aureliendossantos.utils",
+  "version": "0.1.0",
+  "displayName": "Utils",
+  "description": "Various utility functions and classes for Unity development.",
+  "keywords": [
+    "helpers",
+    "utils"
+  ],
+  "author": {
+    "name": "Aurélien Dos Santos",
+    "email": "aureliendsantos@gmail.com",
+    "url": "https://aureliendossantos.com"
+  }
+}
