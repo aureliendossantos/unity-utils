@@ -1,3 +1,7 @@
+## [0.3.0]
+
+New syntax & docs for the StateMachine.
+
 ## [0.2.0]
 
 Added easing functions as parameters to the `Animate` method.

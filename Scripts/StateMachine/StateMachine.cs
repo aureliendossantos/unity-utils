@@ -3,11 +3,14 @@
 /// <summary>
 /// Finite State Machine base class.
 /// <see href="https://github.com/MinaPecheux/UnityTutorials-FiniteStateMachines"/>
-/// <seealso cref="BaseState"/>
+/// <seealso cref="State"/>
 /// </summary>
 public class StateMachine : MonoBehaviour
 {
-    public State currentState;
+    /// <summary>
+    /// The current state of the State Machine.
+    /// </summary>
+    public State state;
 
     /// <summary>
     /// Defines the initial state of the State Machine.
@@ -16,18 +19,18 @@ public class StateMachine : MonoBehaviour
 
     protected void Start()
     {
-        currentState = InitialState;
-        currentState?.Enter();
+        state = InitialState;
+        state?.Enter();
     }
 
     protected virtual void Update()
     {
-        currentState?.UpdateLogic();
+        state?.UpdateLogic();
     }
 
     void LateUpdate()
     {
-        currentState?.UpdatePhysics();
+        state?.UpdatePhysics();
     }
 
     /// <summary>
@@ -35,8 +38,8 @@ public class StateMachine : MonoBehaviour
     /// </summary>
     public void ChangeState(State newState)
     {
-        currentState.Exit();
-        currentState = newState;
-        currentState.Enter();
+        state.Exit();
+        state = newState;
+        state.Enter();
     }
 }
