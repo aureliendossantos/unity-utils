@@ -42,9 +42,12 @@ public class DampedAngle
         Target = initialValue;
     }
 
+    /// <summary>
+    /// Sets the target angle based on a 3D vector suited for top-down views (XZ plane).
+    /// </summary>
     public void SetTarget(Vector3 direction)
     {
-        Target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Target = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
     }
 
     public void SetTarget(Vector2 direction)
