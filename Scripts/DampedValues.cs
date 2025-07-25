@@ -39,27 +39,27 @@ public class DampedAngle
     public DampedAngle(float initialValue)
     {
         Value = initialValue;
-        target = initialValue;
+        Target = initialValue;
     }
 
     public void SetTarget(Vector3 direction)
     {
-        target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }
 
     public void SetTarget(Vector2 direction)
     {
-        target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }
 
     public void SetTarget(float angle)
     {
-        target = angle;
+        Target = angle;
     }
 
     public float Update()
     {
-        Value = Mathf.SmoothDampAngle(Value, target, ref velocity, smoothTime);
+        Value = Mathf.SmoothDampAngle(Value, Target, ref velocity, smoothTime);
         return Value;
     }
 }
