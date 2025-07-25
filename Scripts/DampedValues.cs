@@ -18,9 +18,10 @@ public class DampedFloat
         target = initialValue;
     }
 
-    public void Update()
+    public float Update()
     {
         Value = Mathf.SmoothDamp(Value, target, ref velocity, smoothTime);
+        return Value;
     }
 }
 
@@ -41,8 +42,9 @@ public class DampedAngle
         target = initialValue;
     }
 
-    public void Update()
+    public float Update()
     {
         Value = Mathf.SmoothDampAngle(Value, target, ref velocity, smoothTime);
+        return Value;
     }
 }
