@@ -32,7 +32,7 @@ public class DampedFloat
 public class DampedAngle
 {
     [ShowNativeProperty] public float Value { get; private set; }
-    [HideInInspector] public float target;
+    [HideInInspector] public float Target { get; private set; }
     float velocity = 0f;
     [SerializeField] public float smoothTime = 0.5f;
 
@@ -40,6 +40,21 @@ public class DampedAngle
     {
         Value = initialValue;
         target = initialValue;
+    }
+
+    public void SetTarget(Vector3 direction)
+    {
+        target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
+
+    public void SetTarget(Vector2 direction)
+    {
+        target = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
+
+    public void SetTarget(float angle)
+    {
+        target = angle;
     }
 
     public float Update()
