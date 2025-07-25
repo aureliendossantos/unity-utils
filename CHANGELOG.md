@@ -1,3 +1,7 @@
+## [0.4.0]
+
+New syntax for damped values.
+
 ## [0.3.0]
 
 New syntax & docs for the StateMachine.
