@@ -17,7 +17,7 @@ public class StateMachine : MonoBehaviour
     /// </summary>
     protected virtual State InitialState => null;
 
-    protected void Start()
+    protected virtual void Start()
     {
         state = InitialState;
         state?.Enter();
@@ -28,7 +28,7 @@ public class StateMachine : MonoBehaviour
         state?.UpdateLogic();
     }
 
-    void LateUpdate()
+    protected virtual void LateUpdate()
     {
         state?.UpdatePhysics();
     }

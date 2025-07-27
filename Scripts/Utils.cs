@@ -43,6 +43,7 @@ public static partial class Utils
     /// </summary>
     public static void DestroyChildren(GameObject t)
     {
-        t.transform.Cast<Transform>().ToList().ForEach(c => UnityEngine.Object.Destroy(c.gameObject));
+        foreach (Transform child in t.transform)
+            UnityEngine.Object.Destroy(child.gameObject);
     }
 }
