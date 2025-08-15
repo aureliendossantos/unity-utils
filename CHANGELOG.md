@@ -1,3 +1,7 @@
+## [0.5.0]
+
+Conversion to git submodule instead of Unity package.
+
 ## [0.4.0]
 
 New syntax for damped values.

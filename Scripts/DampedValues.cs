@@ -1,6 +1,5 @@
 using UnityEngine;
 using NaughtyAttributes;
-using System.ComponentModel;
 
 /// <summary>
 /// Use instead of a simple `float` to have a smooth transition towards a target value that can be changed at any time.
@@ -11,7 +10,7 @@ public class DampedFloat
     [ShowNativeProperty] public float Value { get; private set; }
     [HideInInspector] public float target;
     float velocity = 0f;
-    [SerializeField, DefaultValue(0.5f)] float smoothTime;
+    [SerializeField] float smoothTime;
 
     public DampedFloat(float initialValue)
     {
