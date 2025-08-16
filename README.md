@@ -4,17 +4,17 @@ Various utility functions and classes I use across my Unity projects.
 
 ## Installation
 
-This package needs [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes). In Unity, go to **Package Manager > Install package from git URL**, then paste one URL after the other:
+This package needs [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes). In Unity, go to **Package Manager > Install package from git URL**, then paste the URL:
 
 ```
 https://github.com/dbrizov/NaughtyAttributes.git#upm
 ```
 
-```
-https://github.com/aureliendossantos/unity-utils.git
-```
+Now, clone this repo in a location of your choice, or install it as a submodule to get better control over updates:
 
-Note that the package must be **manually updated** when a new version is available.
+```
+git submodule add https://github.com/aureliendossantos/unity-utils ./Assets/Scripts/CustomFolderName
+```
 
 ## Usage
 
