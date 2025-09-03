@@ -54,3 +54,19 @@ public class IdleState : State
     public override void Exit() { /* On state exit */ }
 }
 ```
+
+### UIBuilder
+
+```csharp
+[SerializeField] VisualTreeAsset playerCardTemplate;
+var card = UIBuilder.Instantiate(playerCardTemplate, playerCardsContainer)
+.SetLabel("player-name", playerName);
+
+[SerializeField] VisualTreeAsset modalTemplate;
+UIBuilder.Instantiate(modalTemplate, modalsContainer)
+.SetLabel("text-content", "Level complete!")
+.SetButton("main-button", "Retry", ReloadScene);
+
+// Remove an element
+card.Remove();
+```
